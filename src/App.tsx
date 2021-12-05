@@ -51,6 +51,7 @@ import Test from "./pages/Test";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import BottomAppBar from "./components/BottomAppBar";
+import Home from "./pages/Home/index";
 
 const App = () => {
   return (
@@ -59,7 +60,9 @@ const App = () => {
         <Toolbar></Toolbar>
       </AppBar>
       <Toolbar />
+      <Home />
       {/* 앱바 사이에 작성하면 가려져서안댐 따라서 <Toolbar/>쓰고 써야댐 */}
+      <Toolbar />
       <BottomAppBar />
     </main>
   );
