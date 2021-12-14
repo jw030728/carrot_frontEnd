@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { tradeItems } from "./data";
 import TradeInformation from "./components/TradeInformation";
+import TradeEvent from "./components/TradeEvent";
 
 const ImageTheme = {
   width: "150px",
@@ -32,12 +33,26 @@ const Home = (): JSX.Element => {
                     sx={ImageTheme}
                   />
                 </ListItemAvatar>
-                <TradeInformation
+                {/* <TradeInformation
                   title={item.title}
                   location={item.location}
                   createAt={item.createAt}
                   updateAt={item.updateAt}
                   price={item.price}
+                /> */}
+                <ListItemText
+                  primary={
+                    <TradeInformation
+                      title={item.title}
+                      location={item.location}
+                      createAt={item.createAt}
+                      updateAt={item.updateAt}
+                      price={item.price}
+                    />
+                  }
+                  secondary={
+                    <TradeEvent chat={item.chat} interest={item.interest} />
+                  }
                 />
               </ListItemButton>
             </ListItem>

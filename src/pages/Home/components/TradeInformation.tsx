@@ -20,7 +20,7 @@ const TradeInformation = (information: TradeInformationType): JSX.Element => {
     <Box>
       <Typography variant="h6">{title}</Typography>
       <Typography variant="subtitle1" style={{ color: "rgba(0,0,0,0,5)" }}>
-        {location}*{displayDate}
+        {location} : {displayDate}
       </Typography>
       <Typography variant="subtitle1">
         <strong>{price}원</strong>
