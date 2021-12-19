@@ -52,18 +52,24 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import BottomAppBar from "./components/BottomAppBar";
 import Home from "./pages/Home/index";
+import TradeDetail from "./pages/TradeDetail";
+import TradeAppBar from "./pages/TradeDetail/components/TradeAppBar";
+import TopBottomAppBar from "./pages/Chat";
 
 const App = () => {
   return (
     <main>
-      <AppBar position="fixed">
+      {/* <AppBar position="fixed">
         <Toolbar></Toolbar>
       </AppBar>
       <Toolbar />
-      <Home />
+      <Home /> */}
+      <TopBottomAppBar />
+      <Toolbar />
+      {/* <TradeDetail /> */}
       {/* 앱바 사이에 작성하면 가려져서안댐 따라서 <Toolbar/>쓰고 써야댐 */}
       <Toolbar />
-      <BottomAppBar />
+      {/* <BottomAppBar /> */}
     </main>
   );
 };
