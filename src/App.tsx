@@ -59,16 +59,16 @@ import TopBottomAppBar from "./pages/Chat";
 const App = () => {
   return (
     <main>
+      <Home />
       {/* <AppBar position="fixed">
         <Toolbar></Toolbar>
       </AppBar>
       <Toolbar />
-      <Home /> */}
+      <Home /> 
       <TopBottomAppBar />
       <Toolbar />
-      {/* <TradeDetail /> */}
+      <TradeDetail /> */}
       {/* 앱바 사이에 작성하면 가려져서안댐 따라서 <Toolbar/>쓰고 써야댐 */}
-      <Toolbar />
       {/* <BottomAppBar /> */}
     </main>
   );

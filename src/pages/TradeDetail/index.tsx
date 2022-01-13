@@ -9,14 +9,37 @@ import {
   Box,
   Button,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import TagFacesIcon from "@mui/icons-material/TagFaces";
 import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import TradeAppBar from "./components/TradeAppBar";
+import axios from "axios";
+
+type TradeItem = {
+  id: string;
+  image: string;
+  title: string;
+  description: string;
+  location: string;
+  createAt: Date;
+  updateAt?: Date;
+  price: number;
+  chat?: number;
+  isAdjustable: boolean;
+};
 
 const TradeDetail = (): JSX.Element => {
+  const [article, setArticle] = useState<TradeItem>();
+  const getArticle = async () => {
+    const { data } = await axios.get("http://localhost:5000/trade/articles/1");
+    setArticle(data);
+  };
+  useEffect(() => {
+    getArticle();
+  }, []);
+
   return (
     <>
       <Grid container>
@@ -58,13 +81,19 @@ const TradeDetail = (): JSX.Element => {
       </Grid>
       <hr />
       <Typography variant="h4" color="primary">
-        제목
+        {article && article.title}
       </Typography>
       <Box>
         <br />
-        본문
+        {article && article.description}
       </Box>
-      <TradeAppBar price={1} isAdjustable={true} isInterest={true} />
+      {article && (
+        <TradeAppBar
+          price={article.price}
+          isAdjustable={true}
+          isInterest={true}
+        />
+      )}
     </>
   );
 };
